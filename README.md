@@ -1,6 +1,18 @@
-findfile is a simple tool that finds matching files using positional arguments
+findfile is a simple tool that finds matching files using positional arguments as filters.
 
-common prefix is found and ignored during matching to allow unique matches
+a common prefix is found and stripped during each positional argument processing.
+This style of matching allows filters to be iterively extended.
+
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Examples](#examples)
+- [Usage](#usage)
+
+<!-- markdown-toc end -->
+
+
+# Examples
 
 # Usage
 
