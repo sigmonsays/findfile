@@ -1,0 +1,12 @@
+schema = 3
+
+[mod]
+  [mod."github.com/alexflint/go-arg"]
+    version = "v1.4.3"
+    hash = "sha256-elfo+rxJveSTs7JM5N0fL6cLQW1MSwHrHUBs4aahR7E="
+  [mod."github.com/alexflint/go-scalar"]
+    version = "v1.1.0"
+    hash = "sha256-X3zCtg6E79AM3U2K+2G6lDHb2mQ4MvoCTol2w63nJqU="
+  [mod."github.com/sigmonsays/go-logging"]
+    version = "v0.0.0-20220128052735-680ed4f96095"
+    hash = "sha256-mSbbRx+LFqAoNoroW4KTDxRkiKVYwp+v9UugnZlfJ8o="
