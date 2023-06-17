@@ -9,14 +9,14 @@ import (
 )
 
 type Options struct {
-	Verbose      bool     `arg:"-v, --verbose" help:"be verbose"`
-	DirsOnly     bool     `arg:"-D, --dirs-only" help:"match only directories"`
-	NoCase       bool     `arg:"-i, --no-case" help:"case insensitive match"`
-	PrefixSearch bool     `arg:"-p, --prefix-search" help:"perform prefix search"`
-	Concurrency  int      `arg:"-c, --concurrency" help:"worker concurrency"`
-	Dir          string   `arg:"-d, --dir" help:"directory to look in"`
-	LogLevel     string   `arg:"-l, --loglevel" help:"log level"`
-	Args         []string `arg:"positional"`
+	Verbose       bool     `arg:"-v, --verbose" help:"be verbose"`
+	DirsOnly      bool     `arg:"-D, --dirs-only" help:"match only directories"`
+	CaseSensitive bool     `arg:"-C, --case" help:"case sensitive match"`
+	PrefixSearch  bool     `arg:"-p, --prefix-search" help:"perform prefix search"`
+	Concurrency   int      `arg:"-c, --concurrency" help:"worker concurrency"`
+	Dir           string   `arg:"-d, --dir" help:"directory to look in"`
+	LogLevel      string   `arg:"-l, --loglevel" help:"log level"`
+	Args          []string `arg:"positional"`
 }
 
 func main() {

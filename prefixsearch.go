@@ -20,7 +20,7 @@ func runPrefixSearch(opts *Options) error {
 
 	log.Tracef("args %v", opts.Args)
 	for _, arg := range opts.Args {
-		if opts.NoCase {
+		if !opts.CaseSensitive {
 			arg = strings.ToLower(arg)
 		}
 		offset = findCommonPrefixOffset(paths)
@@ -29,10 +29,10 @@ func runPrefixSearch(opts *Options) error {
 
 		matches = make([]string, 0)
 		for _, path := range paths {
-			if opts.NoCase {
-				compare_value = strings.ToLower(path[offset:])
-			} else {
+			if opts.CaseSensitive {
 				compare_value = path[offset:]
+			} else {
+				compare_value = strings.ToLower(path[offset:])
 			}
 
 			if strings.Contains(compare_value, arg) {

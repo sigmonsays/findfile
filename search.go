@@ -67,7 +67,7 @@ Dance:
 			if !ok {
 				break Dance
 			}
-			if pathMatch(path, opts.Args) {
+			if pathMatch(path, opts.Args, opts.CaseSensitive) {
 				results <- path
 			}
 			wg.Done()
@@ -76,11 +76,17 @@ Dance:
 	log.Tracef("%s exiting", wid)
 }
 
-func pathMatch(path string, args []string) bool {
+func pathMatch(path string, args []string, casesensitive bool) bool {
 	idx := 0
 	offset := 0
 	for _, arg := range args {
-		idx = strings.Index(path[offset:], arg)
+
+		if casesensitive {
+			idx = strings.Index(strings.ToLower(path[offset:]), strings.ToLower(arg))
+		} else {
+			idx = strings.Index(path[offset:], arg)
+		}
+
 		if idx < 0 {
 			return false
 		}
