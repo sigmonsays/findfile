@@ -14,19 +14,13 @@ This style of matching allows filters to be iterively extended.
 
 # Examples
 
-# Usage
+     # Find files and directories matching 'foo' and 'bar'
+     findfile foo bar
 
-    findfile -h
-    Usage: findfile [--verbose] [--dirs-only] [--no-case] [--dir DIR] [--loglevel LOGLEVEL] [ARGS [ARGS ...]]
+     # Find files and directories matching 'foo' and 'bar' (case sensitive)
+     findfile -C foo bar
+     
+     # Find just directories matching fizz
+     findfile -D fizz
+     
 
-    Positional arguments:
-    ARGS
-
-    Options:
-    --verbose, -v          be verbose
-    --dirs-only, -D        match only directories
-    --no-case, -i          case insensitive match
-    --dir DIR, -d DIR      directory to look in [default: /home/sig/code/findfile]
-    --loglevel LOGLEVEL, -l LOGLEVEL
-                            log level [default: INFO]
-    --help, -h             display this help and exit
