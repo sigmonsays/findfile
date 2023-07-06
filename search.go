@@ -82,9 +82,9 @@ func pathMatch(path string, args []string, casesensitive bool) bool {
 	for _, arg := range args {
 
 		if casesensitive {
-			idx = strings.Index(strings.ToLower(path[offset:]), strings.ToLower(arg))
-		} else {
 			idx = strings.Index(path[offset:], arg)
+		} else {
+			idx = strings.Index(strings.ToLower(path[offset:]), strings.ToLower(arg))
 		}
 
 		if idx < 0 {
