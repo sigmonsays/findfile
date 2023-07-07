@@ -24,3 +24,8 @@ This style of matching allows filters to be iterively extended.
      findfile -D fizz
      
 
+
+# Dev
+
+
+    go install github.com/goreleaser/goreleaser@latest
