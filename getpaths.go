@@ -40,7 +40,16 @@ func GetPathsChan(wg *sync.WaitGroup, paths string, opts *Options, work chan str
 		work <- path
 		return nil
 	}
-	err := filepath.Walk(opts.Dir, walkfn)
+
+	// resolve symlink
+	dir := opts.Dir
+	res, err := filepath.EvalSymlinks(opts.Dir)
+	if err == nil && res != "" {
+		log.Tracef("%s is symlink, walking %s", opts.Dir, res)
+		dir=res
+	}
+
+	err = filepath.Walk(dir, walkfn)
 	if err != nil {
 		log.Debugf("Walk %s", err)
 	}
