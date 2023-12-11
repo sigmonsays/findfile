@@ -6,7 +6,6 @@ mkShell {
   buildInputs = [
 
     git
-    gomod2nix
 
     # Go development
     go_1_20
